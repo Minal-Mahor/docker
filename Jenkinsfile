@@ -3,7 +3,7 @@ node {
 
     docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
 
-        def customImage = docker.build("minalmahor/pythontestapp")
+        def customImage = docker.build("minalmahor/demoflaskapp"+":${BUILD_NUMBER}")
 
         /* Push the container to the custom Registry */
         customImage.push()
